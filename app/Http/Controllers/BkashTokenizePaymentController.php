@@ -15,9 +15,7 @@ class BkashTokenizePaymentController extends Controller
     }
     public function createPayment(Request $request)
     {
-        // dd($request->all());
-       
-
+        
         $inv = uniqid();
         $request['intent'] = 'sale';
         $request['mode'] = '0011'; //0011 for checkout
@@ -74,33 +72,4 @@ class BkashTokenizePaymentController extends Controller
 
 
 
-
-
-
-
-    public function searchTnx($trxID)
-    {
-        //response
-        return BkashPaymentTokenize::searchTransaction($trxID);
-        //return BkashPaymentTokenize::searchTransaction($trxID,1); //last parameter is your account number for multi account its like, 1,2,3,4,cont..
-    }
-
-    public function refund(Request $request)
-    {
-        $paymentID='Your payment id';
-        $trxID='your transaction no';
-        $amount=5;
-        $reason='this is test reason';
-        $sku='abc';
-        //response
-        return BkashRefundTokenize::refund($paymentID,$trxID,$amount,$reason,$sku);
-        //return BkashRefundTokenize::refund($paymentID,$trxID,$amount,$reason,$sku, 1); //last parameter is your account number for multi account its like, 1,2,3,4,cont..
-    }
-    public function refundStatus(Request $request)
-    {
-        $paymentID='Your payment id';
-        $trxID='your transaction no';
-        return BkashRefundTokenize::refundStatus($paymentID,$trxID);
-        //return BkashRefundTokenize::refundStatus($paymentID,$trxID, 1); //last parameter is your account number for multi account its like, 1,2,3,4,cont..
-    }
 }

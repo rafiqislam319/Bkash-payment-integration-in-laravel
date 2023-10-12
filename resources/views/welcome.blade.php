@@ -15,22 +15,12 @@
 
     <div class="container">
         <div class="row mt-5 text-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <img src="asset/product.png" alt="product image">
             </div>
-            <div class="col-md-6">
-                <h2>Pay with Bkash</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quia. Nihil obcaecati quis.</p>
-
-                    <form action="{{route('bkash-create-payment')}}" method="post">
-                        @csrf
-                        <span>Enter Amount</span>
-                        <input value="1" name="price" type="number">
-                        <button type="submit" name="bkash-payment">Pay Now</button>
-                    </form>
-
-
-
+            <div class="col-md-4">
+               <h2>Find out order List</h2>
+               <a href="{{route('orders.index')}}" class="btn btn-warning">See All Orders</a>
             </div>
         </div>
     </div>

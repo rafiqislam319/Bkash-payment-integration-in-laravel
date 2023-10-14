@@ -16,15 +16,13 @@ class BkashTokenizePaymentController extends Controller
     public function createPayment(Request $request)
     {
         // dd($request->all());
-       
-
         $inv = uniqid();
         $request['intent'] = 'sale';
         $request['mode'] = '0011'; //0011 for checkout
         $request['payerReference'] = $inv;
         $request['currency'] = 'BDT';
-        // $request['amount'] = 1;
-        $request['amount'] = request()->input('price');   //comming from input field of form
+        $request['amount'] = 1;
+        // $request['amount'] = request()->input('price');   //comming from input field of form
         $request['merchantInvoiceNumber'] = $inv;
         $request['callbackURL'] = config("bkash.callbackURL");;
 
@@ -71,13 +69,6 @@ class BkashTokenizePaymentController extends Controller
         }
     }
 
-
-
-
-
-
-
-
     public function searchTnx($trxID)
     {
         //response
@@ -103,4 +94,8 @@ class BkashTokenizePaymentController extends Controller
         return BkashRefundTokenize::refundStatus($paymentID,$trxID);
         //return BkashRefundTokenize::refundStatus($paymentID,$trxID, 1); //last parameter is your account number for multi account its like, 1,2,3,4,cont..
     }
+
+
+
+
 }

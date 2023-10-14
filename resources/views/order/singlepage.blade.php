@@ -15,27 +15,27 @@
 
     <div class="container">
         <div class="row p-5">
-        <h3 class="p-3">Single product</h3>
+            <h3 class="p-3">Single product</h3>
             <div class="card">
-                      <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{$order->product_name}}</h5>
-                        <p class="card-text mb-1">{{$order->amount}} tk.</p>
-                        <p class="card-text mb-1">{{$order->invoice}}</p>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{$order->product_name}}</h5>
+                    <p class="card-text mb-1">{{$order->amount}} tk.</p>
+                    <p class="card-text mb-1">{{$order->invoice}}</p>
 
-                        <form action="{{route('bkash-create-payment')}}" method="post">
+                    <form action="{{route('bkash-create-payment')}}" method="post">
                         @csrf
-                        <button type="submit" class="btn btn-primary mt-auto align-self-start">Pay now</button>
-                        </form>
-                        
-                      </div>
-                      
+                        <button type="submit" name="bkash-payment">Pay Now</button>
+                    </form>
+
+                </div>
+
+            </div>
         </div>
-    </div>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

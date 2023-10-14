@@ -21,8 +21,14 @@
                         <h5 class="card-title">{{$order->product_name}}</h5>
                         <p class="card-text mb-1">{{$order->amount}} tk.</p>
                         <p class="card-text mb-1">{{$order->invoice}}</p>
-                        <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>
+
+                        <form action="{{route('bkash-create-payment')}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary mt-auto align-self-start">Pay now</button>
+                        </form>
+                        
                       </div>
+                      
         </div>
     </div>
 

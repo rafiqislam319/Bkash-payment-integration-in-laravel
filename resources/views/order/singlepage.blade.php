@@ -22,7 +22,7 @@
                     <p class="card-text mb-1">{{$order->amount}} tk.</p>
                     <p class="card-text mb-1">{{$order->invoice}}</p>
 
-                    <form action="{{route('bkash-create-payment')}}" method="post">
+                    <form action="{{route('bkash-create-payment', $order->id)}}" method="post">
                         @csrf
                         <button type="submit" name="bkash-payment">Pay Now</button>
                     </form>

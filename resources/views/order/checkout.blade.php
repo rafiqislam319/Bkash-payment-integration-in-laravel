@@ -17,6 +17,7 @@
             <div class="card">
                 <div class="card-body">
                 <form action="{{ route('bkash-create-payment') }}" method="post">
+                    @csrf
                 <div class="mb-3">
                     <label for="customer_name" class="form-label">Customer Name</label>
                     <input type="text" class="form-control" id="customer_name" name="customer_name">

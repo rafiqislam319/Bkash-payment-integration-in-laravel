@@ -29,7 +29,7 @@ class BkashTokenizePaymentController extends Controller
         $request['amount'] = 1;
         // $request['amount'] = request()->input('price');   //comming from input field of form
         $request['merchantInvoiceNumber'] = $inv;
-        $request['callbackURL'] = config("bkash.callbackURL");;
+        $request['callbackURL'] = config("bkash.callbackURL");
 
         // dd($request->all());
 

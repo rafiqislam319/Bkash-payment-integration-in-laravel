@@ -16,14 +16,15 @@ class OrderFactory extends Factory
      */
     public function definition(): array
     {
-        $products = ['Mobile', 'pc', 'Watch', 'I-pad', 'Tab', 'Laptop'];
+        $customers = ['Jon', 'Ron', 'June', 'Joe', 'Jane', 'Doe', 'jony', 'rony', 'tony', 'tom'];
         static $invoice = 20;
         return [
-            'product_name' => $products[rand(0, 3)],
-            'currency' => 'BDT',
-            'amount' => rand(1500, 2000),
-            'invoice' => $invoice++,
-            'status' => 'pending',
+            'customer_name' => fake()->randomElement($customers),
+            'customer_phone' => fake()->phoneNumber(),
+            'shipping_address' => fake()->address(),
+            'total_product' => fake()->numberBetween($min = 1, $max = 20),
+            'amount' => fake()->numberBetween($min = 1, $max = 10000),
+            'order_status' => 'pending',
         ];
     }
 }

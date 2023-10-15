@@ -9,47 +9,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="" style="background-color: #eee;">
 
 
 
-    <div class="container">
-        <div class="row p-5">
-        <h2 class="text-center p-5">List of orders</h2>
-           <table class="table table-striped table-warning">
-             <thead>
-               <tr>
-                 <th scope="col">#</th>
-                 <th scope="col">Product Name</th>
-                 <th scope="col">Currency</th>
-                 <th scope="col">Amount</th>
-                 <th scope="col">Invoice</th>
-                 <th scope="col">TrxID</th>
-                 <th scope="col">Status</th>
-                 <th scope="col">Action</th>
-               </tr>
-             </thead>
-             <tbody>
-             @foreach($orders as $index=>$order)
-               <tr>
-                 <td>{{ $index++ }}</td>
-                 <td>{{ $order->product_name }}</td>
-                 <td>{{ $order->currency }}</td>
-                 <td>{{ $order->amount }}</td>
-                 <td>{{ $order->invoice }}</td>
-                 <td>{{ $order->trxID }}</td>
-                 <td>{{ $order->status }}</td>
-                 <td>
-                    <a href="{{ route('orders.show', $order->id) }}">
-                    <i class="bi bi-eye"></i>
-                    </a>
-                 </td>
-               </tr>
-               @endforeach
-             </tbody>
-           </table>
+<section>
+  <div class="container py-5">
+    <h2 class="text-center p-5">List of Products</h2>
+    <div class="row">
+
+      @foreach($products as $product)
+      <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+        <div class="card">
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between mb-3">
+              <h5 class="mb-0">{{ $product->name }}</h5>
+              <h5 class="text-dark mb-0">$ {{ $product->price }}</h5>
+            </div>
+
+            <a href="{{ url('checkout') }}" class="btn btn-success">
+              Checkout 
+            </a>
+          </div>
         </div>
+      </div>
+      @endforeach
+
+      
+      
     </div>
+  </div>
+</section>
 
 
 

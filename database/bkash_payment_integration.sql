@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 15, 2023 at 10:57 AM
+-- Generation Time: Oct 19, 2023 at 11:45 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -96,7 +96,22 @@ INSERT INTO `orders` (`id`, `customer_name`, `customer_phone`, `shipping_address
 (7, 'Jon', '(360) 378-7406', '2789 Brent Locks Suite 182\nLake Willaville, NH 90614', '17', 4892.00, 'pending', '2023-10-15 03:45:28', '2023-10-15 03:45:28'),
 (8, 'Joe', '(724) 442-0516', '1663 Mosciski Ports Apt. 916\nDevanview, PA 69612', '10', 5084.00, 'pending', '2023-10-15 03:45:28', '2023-10-15 03:45:28'),
 (9, 'Jane', '+1 (601) 686-2647', '14048 Terry Villages Apt. 280\nRyanmouth, OR 19035', '12', 5559.00, 'pending', '2023-10-15 03:45:28', '2023-10-15 03:45:28'),
-(10, 'Joe', '(860) 890-7907', '51720 Felipa Pines Apt. 749\nPort Berylstad, ID 14549', '4', 1673.00, 'pending', '2023-10-15 03:45:28', '2023-10-15 03:45:28');
+(10, 'Joe', '(860) 890-7907', '51720 Felipa Pines Apt. 749\nPort Berylstad, ID 14549', '4', 1673.00, 'pending', '2023-10-15 03:45:28', '2023-10-15 03:45:28'),
+(11, 'rafiq', '544', 'dhaka', '2', 70.00, 'pending', '2023-10-17 00:56:57', '2023-10-17 00:56:57'),
+(12, 'rafiq', '544', 'dhaka', '23', 2222.00, 'pending', '2023-10-17 02:40:21', '2023-10-17 02:40:21'),
+(13, 'rafiq', '544', 'dhaka', '23', 2222.00, 'pending', '2023-10-17 02:43:48', '2023-10-17 02:43:48'),
+(14, 'rafiq', '544', 'dhaka', '23', 2222.00, 'pending', '2023-10-17 02:49:47', '2023-10-17 02:49:47'),
+(15, 'Jane Williams', '656', '6HGHG', '545', 445.00, 'pending', '2023-10-17 03:07:02', '2023-10-17 03:07:02'),
+(16, 'Jane Williams', '544', 'fgfg', '43', 343.00, 'pending', '2023-10-17 03:58:07', '2023-10-17 03:58:07'),
+(17, 'Nobodol', '544', 'gfg', '434', 34.00, 'pending', '2023-10-17 03:59:50', '2023-10-17 03:59:50'),
+(18, 'Jane Williams', '544', 'fdf', '4', 34.00, 'pending', '2023-10-17 04:01:40', '2023-10-17 04:01:40'),
+(19, 'Jane Williams', '544', 'fdf', '4', 34.00, 'pending', '2023-10-17 04:04:42', '2023-10-17 04:04:42'),
+(20, 'Jane Williams', '544', 'fdf', '4', 34.00, 'pending', '2023-10-17 04:09:52', '2023-10-17 04:09:52'),
+(21, 'Jane Williams', '544', 'fdf', '4', 34.00, 'pending', '2023-10-17 04:13:01', '2023-10-17 04:13:01'),
+(22, 'Jane Williams', '544', 'm', '78', 7878.00, 'pending', '2023-10-19 04:44:50', '2023-10-19 04:44:50'),
+(23, 'Jane Williams', '676', 'jjj', '67', 66565.00, 'pending', '2023-10-19 04:53:08', '2023-10-19 04:53:08'),
+(24, 'Jane Williams', '544', 'fdfdf', '2', 0.00, 'pending', '2023-10-19 05:40:47', '2023-10-19 05:40:47'),
+(25, 'Jane Williams', '544', 'fdfdf', '2', 10.00, 'pending', '2023-10-19 05:41:19', '2023-10-19 05:41:19');
 
 -- --------------------------------------------------------
 
@@ -123,7 +138,9 @@ INSERT INTO `order_products` (`id`, `product_id`, `order_id`, `product_name`, `p
 (2, 2, 2, 'mouse', 454, '2023-10-15 10:06:20', '2023-10-15 10:06:20'),
 (3, 3, 3, 'watch', 1000, '2023-10-15 10:06:20', '2023-10-15 10:06:20'),
 (4, 4, 4, 'tab', 4445, '2023-10-15 10:07:49', '2023-10-15 10:07:49'),
-(5, 5, 5, 'laptop', 232323, '2023-10-15 10:07:49', '2023-10-15 10:07:49');
+(5, 5, 5, 'laptop', 232323, '2023-10-15 10:07:49', '2023-10-15 10:07:49'),
+(6, 2, 25, 'mouse', 8, '2023-10-19 05:41:19', '2023-10-19 05:41:19'),
+(7, 3, 25, 'watch', 2, '2023-10-19 05:41:19', '2023-10-19 05:41:19');
 
 -- --------------------------------------------------------
 
@@ -278,13 +295,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

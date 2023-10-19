@@ -22,7 +22,7 @@ Route::get('list/of/products', function(){
     // return view('order.index');
 });
 Route::get('products', [ProductController::class, 'index']);
-Route::get('checkout', [ProductController::class, 'checkout']);
+Route::get('checkout/{productID}', [ProductController::class, 'checkout']);
 
 
 

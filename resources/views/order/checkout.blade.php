@@ -11,6 +11,8 @@
 
 <body>
     <div class="container mt-5">
+
+        @dump(session('cart'))
         <div class="row">
             <div class="col-md-8 offset-2">
             <h3 class="text-center p-5">Checkout Form</h3>

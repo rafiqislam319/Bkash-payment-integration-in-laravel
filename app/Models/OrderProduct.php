@@ -14,4 +14,9 @@ class OrderProduct extends Model
         'product_name',
         'price'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

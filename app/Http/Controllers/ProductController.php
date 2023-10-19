@@ -10,8 +10,9 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // dd($request->all());
         $products = Product::all();
         return view('order.index', compact('products'));
     }
@@ -63,9 +64,17 @@ class ProductController extends Controller
     {
         //
     }
-    public function checkout()
+    public function checkout(Request $request, $productID)
     {
+        // session()->forget('cart');
+    
+        $session = session('cart');
+        $product = Product::select('id', 'name', 'price')->where('id', $productID)->first()->toArray();
         
+        $session[$product['id']]  = $product;
+        session()->put(['cart' => $session]);
+        // dd(session()->get('cart'));
         return view('order.checkout');
     }
 }
+

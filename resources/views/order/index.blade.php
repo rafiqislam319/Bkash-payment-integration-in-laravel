@@ -28,7 +28,8 @@
               <h5 class="text-dark mb-0">$ {{ $product->price }}</h5>
             </div>
 
-            <a href="{{ url('checkout') }}" class="btn btn-success">
+
+            <a href="{{ url('checkout', ['productID' => $product->id]) }}" class="btn btn-success">
               Checkout 
             </a>
           </div>
